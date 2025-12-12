@@ -1,0 +1,39 @@
+2025/12/12 16:31:35 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php(325): CDbConnection->setActive()
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(472): CModule->getComponent()
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#12 C:\xampp\htdocs\yii-1.1.28.23448d\framework\yiic.php(33): CApplication->run()
+#13 C:\xampp\htdocs\blog-project-yii\protected\yiic.php(7): require_once('...')
+#14 C:\xampp\htdocs\blog-project-yii\protected\yiic(4): require_once('...')
+#15 {main}
+---
+2025/12/12 16:32:26 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbConnection.php(325): CDbConnection->setActive()
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(472): CModule->getComponent()
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#12 C:\xampp\htdocs\yii-1.1.28.23448d\framework\yiic.php(33): CApplication->run()
+#13 C:\xampp\htdocs\blog-project-yii\protected\yiic.php(7): require_once('...')
+#14 C:\xampp\htdocs\blog-project-yii\protected\yiic(4): require_once('...')
+#15 {main}
+---
+2025/12/12 16:36:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog_db.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.

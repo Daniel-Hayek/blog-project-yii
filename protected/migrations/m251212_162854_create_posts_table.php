@@ -4,7 +4,7 @@ class m251212_162854_create_posts_table extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('post', array(
+		$this->createTable('posts', array(
             'id' => 'pk',
             'title' => 'string NOT NULL',
             'content' => 'text NOT NULL',
@@ -16,7 +16,7 @@ class m251212_162854_create_posts_table extends CDbMigration
 
 	public function down()
 	{
-		$this->dropTable('post');
+		$this->dropTable('posts');
 	}
 
 	/*
