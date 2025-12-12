@@ -13,7 +13,12 @@ return array(
 	'components'=>array(
 
 		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=blog_db',
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		),
 
 		'log'=>array(
 			'class'=>'CLogRouter',
