@@ -1,5 +1,5 @@
 <?php
-/* @var $this PostControllerController */
+/* @var $this PostController */
 /* @var $model Post */
 /* @var $form CActiveForm */
 ?>
