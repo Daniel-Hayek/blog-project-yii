@@ -122,9 +122,18 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Post');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+		$model = new Post('search');
+		$model->unsetAttributes();
+
+		if (isset($_GET['Post'])) {
+			$model->attributes = $_GET['Post'];
+		}
+
+		$dataProvider = $model->search();
+
+		$this->render('index', array(
+			'model' => $model,
+			'dataProvider' => $dataProvider,
 		));
 	}
 
