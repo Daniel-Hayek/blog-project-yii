@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostsController */
-/* @var $data Posts */
+/* @var $this PostControllerController */
+/* @var $data Post */
 ?>
 
 <div class="view">

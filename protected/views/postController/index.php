@@ -1,5 +1,5 @@
 <?php
-/* @var $this PostsController */
+/* @var $this PostControllerController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Posts', 'url'=>array('create')),
-	array('label'=>'Manage Posts', 'url'=>array('admin')),
+	array('label'=>'Create Post', 'url'=>array('create')),
+	array('label'=>'Manage Post', 'url'=>array('admin')),
 );
 ?>
 

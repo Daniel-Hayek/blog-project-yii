@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostsController */
-/* @var $model Posts */
+/* @var $this PostControllerController */
+/* @var $model Post */
 
 $this->breadcrumbs=array(
 	'Posts'=>array('index'),
@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Posts', 'url'=>array('index')),
-	array('label'=>'Create Posts', 'url'=>array('create')),
+	array('label'=>'List Post', 'url'=>array('index')),
+	array('label'=>'Create Post', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#posts-grid').yiiGridView('update', {
+	$('#post-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -41,7 +41,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'posts-grid',
+	'id'=>'post-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(

@@ -11,7 +11,7 @@
  * @property string $created_at
  * @property string $updated_at
  */
-class Posts extends CActiveRecord
+class Post extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
@@ -29,7 +29,7 @@ class Posts extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, author', 'required'),
+			array('title, content, author, created_at, updated_at', 'required'),
 			array('title, author', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -97,20 +97,10 @@ class Posts extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Posts the static model class
+	 * @return Post the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-	protected function beforeSave()
-	{
-		if ($this->isNewRecord) {
-			$this->created_at = date('Y-m-d H:i:s');
-		}
-		$this->updated_at = date('Y-m-d H:i:s');
-
-		return parent::beforeSave();
 	}
 }

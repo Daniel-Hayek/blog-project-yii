@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostsController */
-/* @var $model Posts */
+/* @var $this PostControllerController */
+/* @var $model Post */
 /* @var $form CActiveForm */
 ?>
 
