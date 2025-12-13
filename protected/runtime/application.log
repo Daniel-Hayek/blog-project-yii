@@ -37,3 +37,21 @@ Stack trace:
 #15 {main}
 ---
 2025/12/12 16:36:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog_db.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2025/12/13 14:06:11 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "post/create". in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/create')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/create
+---
+2025/12/13 14:07:58 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "list". in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(270): CController->missingAction('list')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('list')
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/list')
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=posts/list
+---
