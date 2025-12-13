@@ -29,11 +29,12 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, author, created_at, updated_at', 'required'),
+			array('title, content, author', 'required'),
 			array('title, author', 'length', 'max'=>255),
+			array('created_at, updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, author, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('title,author', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,5 +103,15 @@ class Post extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	protected function beforeSave()
+	{
+		if ($this->isNewRecord) {
+			$this->created_at = date('Y-m-d H:i:s');
+		}
+		$this->updated_at = date('Y-m-d H:i:s');
+
+		return parent::beforeSave();
 	}
 }
