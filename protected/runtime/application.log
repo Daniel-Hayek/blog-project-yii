@@ -16,3 +16,57 @@ Stack trace:
 REQUEST_URI=/blog-project-yii/index.php?r=posts/index
 HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=posts/admin
 ---
+2025/12/14 09:42:54 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comment` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comment` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2025/12/14 09:42:54 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comment` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comment` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE in C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php(1463): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbMigration.php(366): CDbCommand->addForeignKey()
+#2 C:\xampp\htdocs\blog-project-yii\protected\migrations\m251214_093757_create_comments_table.php(15): CDbMigration->addForeignKey()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(415): m251214_093757_create_comments_table->up()
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\blog-project-yii\protected\yiic.php(7): require_once('...')
+#12 C:\xampp\htdocs\blog-project-yii\protected\yiic(4): require_once('...')
+#13 {main}
+---
+2025/12/14 09:45:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comments` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comments` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2025/12/14 09:45:46 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comments` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comments` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE in C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php(1463): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbMigration.php(366): CDbCommand->addForeignKey()
+#2 C:\xampp\htdocs\blog-project-yii\protected\migrations\m251214_093757_create_comments_table.php(15): CDbMigration->addForeignKey()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(415): m251214_093757_create_comments_table->up()
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\blog-project-yii\protected\yiic.php(7): require_once('...')
+#12 C:\xampp\htdocs\blog-project-yii\protected\yiic(4): require_once('...')
+#13 {main}
+---
+2025/12/14 09:46:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comments` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comments` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE.
+2025/12/14 09:46:26 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1005 Can't create table `blog_db`.`comments` (errno: 150 "Foreign key constraint is incorrectly formed"). The SQL statement executed was: ALTER TABLE `comments` ADD CONSTRAINT `fk_comment_post` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE in C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbCommand.php(1463): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\db\CDbMigration.php(366): CDbCommand->addForeignKey()
+#2 C:\xampp\htdocs\blog-project-yii\protected\migrations\m251214_093757_create_comments_table.php(15): CDbMigration->addForeignKey()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(415): m251214_093757_create_comments_table->up()
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\cli\commands\MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\yiic.php(33): CApplication->run()
+#11 C:\xampp\htdocs\blog-project-yii\protected\yiic.php(7): require_once('...')
+#12 C:\xampp\htdocs\blog-project-yii\protected\yiic(4): require_once('...')
+#13 {main}
+---
