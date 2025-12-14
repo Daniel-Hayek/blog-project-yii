@@ -34,7 +34,7 @@ class Comment extends CActiveRecord
 			array('post_id, user_name, comment_text', 'required'),
         	array('user_name', 'length', 'max'=>255),
         	array('comment_text', 'length', 'min'=>3),
-			
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, post_id, comment_text, user_name, created_at', 'safe', 'on'=>'search'),
@@ -49,7 +49,7 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'post' => array(self::BELONGS_TO, 'Posts', 'post_id'),
+			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
 		);
 	}
 
