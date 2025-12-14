@@ -30,11 +30,16 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, content, author', 'required'),
+
 			array('title, author', 'length', 'max'=>255),
+			array('title', 'length', 'min'=>2),
+			array('content', 'length', 'min'=>10),
+
+			array('author', 'match', 'pattern'=>'/^[a-zA-Z\s]+$/', 'message'=>'Author name can only contain letters and spaces'),
+
+			array('title, author', 'safe', 'on'=>'search'),
+
 			array('created_at, updated_at', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('title,author', 'safe', 'on'=>'search'),
 		);
 	}
 
