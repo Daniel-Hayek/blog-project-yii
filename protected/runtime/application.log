@@ -120,3 +120,156 @@ Stack trace:
 REQUEST_URI=/blog-project-yii/index.php?r=site/register
 HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/register
 ---
+2025/12/15 12:13:39 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/admin
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/login
+---
+2025/12/15 12:18:52 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/create')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/create
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 12:18:54 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/admin
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 12:18:59 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('update')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=1
+---
+2025/12/15 12:19:09 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/delete')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/delete&id=8
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=8
+---
+2025/12/15 12:21:42 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/create')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/create
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 12:22:09 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/create')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/create
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 12:22:12 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('update')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/update&id=2
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=2
+---
+2025/12/15 12:22:17 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/admin
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=2
+---
