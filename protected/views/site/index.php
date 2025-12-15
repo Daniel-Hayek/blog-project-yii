@@ -38,3 +38,19 @@ $this->pageTitle=Yii::app()->name;
         array('class'=>'btn btn-primary')
     ); ?>
 <?php endif; ?>
+
+<br><br>
+<hr>
+
+<?php if(isset($featured) && $featured !== null): ?>
+    <h2>Featured Post</h2>
+    <div class="featured-post">
+        <h3><?php echo CHtml::encode($featured->title); ?></h3>
+
+        <h4><?php echo CHtml::encode($featured->author); ?></h4>
+
+        <p><?php echo CHtml::encode($featured->content); ?></p>
+    </div>
+<?php else: ?>
+    <p>No featured post available.</p>
+<?php endif; ?>

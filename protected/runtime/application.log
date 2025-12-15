@@ -400,3 +400,87 @@ Stack trace:
 REQUEST_URI=/blog-project-yii/index.php?r=post/create
 HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
 ---
+2025/12/15 13:13:48 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "posts/index". in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/index')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=posts/index
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/index
+---
+2025/12/15 13:13:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "posts/index". in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/index')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=posts/index
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 13:13:57 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "posts/index". in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('posts/index')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=posts/index
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/index
+---
+2025/12/15 13:17:53 [error] [php] Undefined variable $featured (C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(872): SiteController->renderFile()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(785): SiteController->renderPartial()
+#4 C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php(34): SiteController->render()
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\blog-project-yii\index.php(13): CWebApplication->run()
+REQUEST_URI=/blog-project-yii/index.php?r=site/index
+in C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php (42)
+in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php (34)
+in C:\xampp\htdocs\blog-project-yii\index.php (13)
+2025/12/15 13:18:51 [error] [php] Undefined variable $featured (C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(872): SiteController->renderFile()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(785): SiteController->renderPartial()
+#4 C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php(34): SiteController->render()
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\blog-project-yii\index.php(13): CWebApplication->run()
+REQUEST_URI=/blog-project-yii/index.php?r=site/index
+in C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php (42)
+in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php (34)
+in C:\xampp\htdocs\blog-project-yii\index.php (13)
+2025/12/15 13:18:52 [error] [php] Undefined variable $featured (C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(872): SiteController->renderFile()
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(785): SiteController->renderPartial()
+#4 C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php(34): SiteController->render()
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\blog-project-yii\index.php(13): CWebApplication->run()
+REQUEST_URI=/blog-project-yii/index.php?r=site/index
+in C:\xampp\htdocs\blog-project-yii\protected\views\site\index.php (42)
+in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php (34)
+in C:\xampp\htdocs\blog-project-yii\index.php (13)
