@@ -83,7 +83,7 @@ class SiteController extends Controller
 				$user = new User();
 				$user->username = $model->username;
 				$user->password = md5($model->password);
-				$user->email = $model->email;
+				$user->role = 'editor';
 				$user->save();
 				$this->redirect(array('site/login'));
 			}
