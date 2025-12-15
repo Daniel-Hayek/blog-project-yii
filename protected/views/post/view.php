@@ -29,3 +29,27 @@ $this->menu=array(
 		'updated_at',
 	),
 )); ?>
+
+<h2>Comments</h2>
+
+<?php if (!empty($model->comments)): ?>
+
+    <?php foreach ($model->comments as $comment): ?>
+        <div class="comment">
+            <strong>
+                <?php echo CHtml::encode($comment->user_name); ?>
+            </strong>
+            <em>
+                (<?php echo CHtml::encode($comment->created_at); ?>)
+            </em>
+
+            <p>
+                <?php echo nl2br(CHtml::encode($comment->comment_text)); ?>
+            </p>
+        </div>
+        <hr>
+    <?php endforeach; ?>
+
+<?php else: ?>
+    <p>No comments yet.</p>
+<?php endif; ?>
