@@ -52,7 +52,7 @@ return array(
 
 		'authManager' => array(
 			'class' => 'CPhpAuthManager',
-			'defaultRoles' => array('editor'), // optional
+			'defaultRoles' => array('editor'),
     	),
 
 		// database settings are configured in database.php
