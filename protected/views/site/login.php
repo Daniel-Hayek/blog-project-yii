@@ -51,3 +51,7 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+<p>
+    Don't have an account? <?php echo CHtml::link('Register', array('site/register')); ?>
+</p>
