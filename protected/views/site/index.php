@@ -21,3 +21,16 @@ $this->pageTitle=Yii::app()->name;
 <p>Here you may see all the posts, or create some of your own!</p>
 
 <a href="http://localhost/blog-project-yii/index.php?r=post/index">Check out my Posts!</a>
+
+<?php if(!Yii::app()->user->isGuest): ?>
+    <br><br><br>
+    <p>
+        Current role: <b><?php echo CHtml::encode(Yii::app()->user->role); ?></b>
+    </p>
+
+    <?php echo CHtml::link(
+        'Toggle Role',
+        array('site/toggleRole'),
+        array('class'=>'btn btn-primary')
+    ); ?>
+<?php endif; ?>

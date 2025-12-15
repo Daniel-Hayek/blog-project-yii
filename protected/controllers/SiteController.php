@@ -91,4 +91,29 @@ class SiteController extends Controller
 
 		$this->render('register', array('model'=>$model));
 	}
+
+	public function actionToggleRole()
+	{
+		if(Yii::app()->user->isGuest) {
+			$this->redirect(array('site/login'));
+		}
+
+		$userModel = User::model()->findByPk(Yii::app()->user->id);
+
+		if($userModel === null) {
+			throw new CHttpException(404, 'User not found.');
+		}
+
+		$newRole = ($userModel->role === 'editor') ? 'admin' : 'editor';
+		$userModel->role = $newRole;
+
+		if($userModel->save(false, array('role'))) {
+			Yii::app()->user->setState('role', $newRole);
+			Yii::app()->user->setFlash('success', "Role switched to $newRole");
+		} else {
+			Yii::app()->user->setFlash('error', "Failed to update role in the database.");
+		}
+
+		$this->redirect(Yii::app()->request->urlReferrer ?: array('site/index'));
+	}
 }

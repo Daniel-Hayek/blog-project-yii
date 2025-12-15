@@ -72,10 +72,9 @@ class LoginForm extends CFormModel
 			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
 			Yii::app()->user->login($this->_identity,$duration);
 
-			var_dump(Yii::app()->user->isGuest);         // should be false
-			var_dump(Yii::app()->user->role);            // should be 'editor'
-			var_dump(Yii::app()->user->checkAccess('editor')); // should be true
-			exit; // stop execution so you can see output
+			var_dump(Yii::app()->user->isGuest);
+			var_dump(Yii::app()->user->role);
+			var_dump(Yii::app()->user->checkAccess('editor'));
 
 			return true;
 		}

@@ -273,3 +273,62 @@ Stack trace:
 REQUEST_URI=/blog-project-yii/index.php?r=post/admin
 HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=2
 ---
+2025/12/15 12:54:54 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('post/delete')
+#9 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=post/delete&id=12
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=post/view&id=12
+---
+2025/12/15 13:01:11 [error] [exception.CHttpException.404] CHttpException: User not found. in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php:104
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionToggleRole()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('toggleRole')
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('site/toggleRole')
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=site/toggleRole
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/index
+---
+2025/12/15 13:01:18 [error] [exception.CHttpException.404] CHttpException: User not found. in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php:104
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionToggleRole()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('toggleRole')
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('site/toggleRole')
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=site/toggleRole
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/index
+---
+2025/12/15 13:02:20 [error] [exception.CHttpException.404] CHttpException: User not found. in C:\xampp\htdocs\blog-project-yii\protected\controllers\SiteController.php:104
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\actions\CInlineAction.php(49): SiteController->actionToggleRole()
+#1 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(282): CController->run('toggleRole')
+#5 C:\xampp\htdocs\yii-1.1.28.23448d\framework\web\CWebApplication.php(141): CWebApplication->runController('site/toggleRole')
+#6 C:\xampp\htdocs\yii-1.1.28.23448d\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\blog-project-yii\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/blog-project-yii/index.php?r=site/toggleRole
+HTTP_REFERER=http://localhost/blog-project-yii/index.php?r=site/index
+---
