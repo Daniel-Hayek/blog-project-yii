@@ -34,17 +34,17 @@ $this->menu=array(
 
 <?php if (!empty($model->comments)): ?>
 
-    <?php foreach ($model->comments as $comment): ?>
+    <?php foreach ($model->comments as $existingComment): ?>
         <div class="comment">
             <strong>
-                <?php echo CHtml::encode($comment->user_name); ?>
+                <?php echo CHtml::encode($existingComment->user_name); ?>
             </strong>
             <em>
-                (<?php echo CHtml::encode($comment->created_at); ?>)
+                (<?php echo CHtml::encode($existingComment->created_at); ?>)
             </em>
 
             <p>
-                <?php echo nl2br(CHtml::encode($comment->comment_text)); ?>
+                <?php echo nl2br(CHtml::encode($existingComment->comment_text)); ?>
             </p>
         </div>
         <hr>
@@ -53,3 +53,28 @@ $this->menu=array(
 <?php else: ?>
     <p>No comments yet.</p>
 <?php endif; ?>
+
+<h3>Add a Comment</h3>
+
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'action' => array('post/createComment', 'postId' => $model->id),
+    'method' => 'post',
+	)); ?>
+
+    <div>
+        <?php echo $form->label($comment, 'user_name'); ?>
+        <?php echo $form->textField($comment, 'user_name'); ?>
+        <?php echo $form->error($comment, 'user_name'); ?>
+    </div>
+
+    <div>
+        <?php echo $form->label($comment, 'comment_text'); ?>
+        <?php echo $form->textArea($comment, 'comment_text'); ?>
+        <?php echo $form->error($comment, 'comment_text'); ?>
+    </div>
+
+    <div>
+        <?php echo CHtml::submitButton('Submit Comment'); ?>
+    </div>
+
+<?php $this->endWidget(); ?>

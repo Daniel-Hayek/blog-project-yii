@@ -28,7 +28,7 @@ class PostController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'createComment'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -53,7 +53,24 @@ class PostController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'comment' => new Comment,
 		));
+	}
+
+	public function actionCreateComment($postId)
+	{
+		$comment = new Comment;
+		$comment->post_id = $postId;
+
+		if (isset($_POST['Comment'])) {
+			$comment->attributes = $_POST['Comment'];
+
+			if ($comment->save()) {
+				$this->redirect(array('post/view', 'id' => $postId));
+			}
+		}
+
+		throw new CHttpException(400, 'Invalid request.');
 	}
 
 	/**
