@@ -6,15 +6,51 @@ $this->pageTitle=Yii::app()->name;
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+<p>This is my personal blog, where I post my thoughts and allow others to read them!</p>
 
-<p>For more details on how to further develop this application, please read
-the <a href="https://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="https://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<p>Here you may see all the posts, or create some of your own!</p>
+
+<p>
+    <?php if(Yii::app()->user->isGuest): ?>
+        <p>To create your own posts, make sure to either
+        <?php echo CHtml::link('Login', array('site/login')); ?>
+        or
+        <?php echo CHtml::link('Register', array('site/register')); ?>
+    </p>
+    <?php else: ?>
+        Hello, <?php echo CHtml::encode(Yii::app()->user->name); ?> |
+        <?php echo CHtml::link('Logout', array('site/logout')); ?>
+    <?php endif; ?>
+</p>
+
+<a href="http://localhost/blog-project-yii/index.php?r=post/index">Go to the posts page!</a>
+
+<?php if(!Yii::app()->user->isGuest): ?>
+    <br><br><br>
+    <p>
+        Current role: <b><?php echo CHtml::encode(Yii::app()->user->role); ?></b>
+    </p>
+
+    <?php echo CHtml::link(
+        'Toggle Role',
+        array('site/toggleRole'),
+        array('class'=>'btn btn-primary')
+    ); ?>
+<?php endif; ?>
+
+<br><br>
+<hr>
+
+<?php if(isset($featured) && $featured !== null): ?>
+    <h2>Featured Post</h2>
+    <div class="featured-post">
+        <h3><?php echo CHtml::encode($featured->title); ?></h3>
+
+        <h4><?php echo CHtml::encode($featured->author); ?></h4>
+
+        <p><?php echo CHtml::encode($featured->content); ?></p>
+    </div>
+<?php else: ?>
+    <p>No featured post available.</p>
+<?php endif; ?>

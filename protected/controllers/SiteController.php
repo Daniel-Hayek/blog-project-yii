@@ -8,13 +8,6 @@ class SiteController extends Controller
 	public function actions()
 	{
 		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
 			),
@@ -29,7 +22,14 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		// Pick a random post
+		$featured = Post::model()->find(array(
+			'order' => 'RAND()',
+		));
+
+		$this->render('index', array(
+			'featured' => $featured,
+		));
 	}
 
 	/**
@@ -44,32 +44,6 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
-	}
-
-	/**
-	 * Displays the contact page
-	 */
-	public function actionContact()
-	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
-		$this->render('contact',array('model'=>$model));
 	}
 
 	/**
@@ -92,7 +66,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(array('site/index'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -105,5 +79,48 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionRegister() {
+		$model = new RegisterForm;
+
+		if(isset($_POST['RegisterForm'])) {
+			$model->attributes = $_POST['RegisterForm'];
+			if($model->validate()) {
+				$user = new User();
+				$user->username = $model->username;
+				$user->password = password_hash($model->password, PASSWORD_DEFAULT);
+				$user->role = 'editor';
+				$user->save();
+				$this->redirect(array('site/login'));
+			}
+		}
+
+		$this->render('register', array('model'=>$model));
+	}
+
+	public function actionToggleRole()
+	{
+		if(Yii::app()->user->isGuest) {
+			$this->redirect(array('site/login'));
+		}
+
+		$userModel = User::model()->findByPk(Yii::app()->user->id);
+
+		if($userModel === null) {
+			throw new CHttpException(404, 'User not found.');
+		}
+
+		$newRole = ($userModel->role === 'editor') ? 'admin' : 'editor';
+		$userModel->role = $newRole;
+
+		if($userModel->save(false, array('role'))) {
+			Yii::app()->user->setState('role', $newRole);
+			Yii::app()->user->setFlash('success', "Role switched to $newRole");
+		} else {
+			Yii::app()->user->setFlash('error', "Failed to update role in the database.");
+		}
+
+		$this->redirect(Yii::app()->request->urlReferrer ?: array('site/index'));
 	}
 }
