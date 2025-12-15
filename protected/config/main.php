@@ -50,6 +50,11 @@ return array(
 		),
 		*/
 
+		'authManager' => array(
+			'class' => 'CPhpAuthManager',
+			'defaultRoles' => array('editor'), // optional
+    	),
+
 		// database settings are configured in database.php
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=blog_db',
