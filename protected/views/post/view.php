@@ -32,31 +32,22 @@ $this->menu=array(
 
 <h2>Comments</h2>
 
-<?php if (!empty($model->comments)): ?>
-
-    <?php foreach ($model->comments as $existingComment): ?>
-        <div class="comment">
-            <strong>
-                <?php echo CHtml::encode($existingComment->user_name); ?>
-            </strong>
-            <em>
-                (<?php echo CHtml::encode($existingComment->created_at); ?>)
-            </em>
-
-            <p>
-                <?php echo nl2br(CHtml::encode($existingComment->comment_text)); ?>
-            </p>
-        </div>
-        <hr>
-    <?php endforeach; ?>
-
-<?php else: ?>
-    <p>No comments yet.</p>
-<?php endif; ?>
+<div id="comment-list">
+    <?php if (!empty($model->comments)): ?>
+        <?php foreach ($model->comments as $existingComment): ?>
+            <?php $this->renderPartial('_comment', array(
+                'comment' => $existingComment,
+            )); ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No comments yet.</p>
+    <?php endif; ?>
+</div>
 
 <h3>Add a Comment</h3>
 
 <?php $form = $this->beginWidget('CActiveForm', array(
+	'id' => 'comment-form',
     'action' => array('post/createComment', 'postId' => $model->id),
     'method' => 'post',
 	)); ?>
@@ -74,7 +65,17 @@ $this->menu=array(
     </div>
 
     <div>
-        <?php echo CHtml::submitButton('Submit Comment'); ?>
+        <?php echo CHtml::ajaxSubmitButton(
+			'Submit Comment',
+			array('post/createComment', 'postId' => $model->id),
+			array(
+				'type' => 'POST',
+				'success' => 'function(html) {
+					$("#comment-list").append(html);
+					$("#comment-form")[0].reset();
+				}'
+			)
+		); ?>
     </div>
 
 <?php $this->endWidget(); ?>

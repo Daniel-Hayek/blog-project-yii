@@ -66,11 +66,19 @@ class PostController extends Controller
 			$comment->attributes = $_POST['Comment'];
 
 			if ($comment->save()) {
+
+				if (Yii::app()->request->isAjaxRequest) {
+					$this->renderPartial('_comment', array(
+						'comment' => $comment,
+					));
+					Yii::app()->end();
+				}
+
 				$this->redirect(array('post/view', 'id' => $postId));
 			}
-		}
+    }
 
-		throw new CHttpException(400, 'Invalid request.');
+    throw new CHttpException(400, 'Invalid request.');
 	}
 
 	/**
